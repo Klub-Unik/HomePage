@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K77581G14H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K77581G14H');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klub Unik – Et inkluderende fællesskab for sårbare børn</title>
+  <meta name="description" content="Klub Unik er et inkluderende fællesskab og en tryg øvebane for sårbare børn, der er ufrivilligt udenfor skolelivet. Forældre er drivkraften, og alle børn deltager med en tryg voksen." />
+  <meta name="keywords" content="Klub Unik, sårbare børn, inkluderende fællesskab, særlige behov, social øvebane, forældre fællesskab, Klub Fristedet" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://klubunik.dk/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://klubunik.dk/" />
+  <meta property="og:title" content="Klub Unik – Et inkluderende fællesskab for sårbare børn" />
+  <meta property="og:description" content="Klub Unik er et inkluderende fællesskab og en tryg øvebane for sårbare børn, der har haft svært ved at være i almene fællesskaber." />
+  <meta property="og:image" content="https://klubunik.dk/klub-unik-hands-logo.svg" />
+  <meta property="og:locale" content="da_DK" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue:   #04A6D6;
+      --orange: #FA5129;
+      --yellow: #FEAB03;
+      --green:  #7DBF10;
+      --purple: #894891;
+      --text:   #1a1a2e;
+      --muted:  #4a4a6a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background-image: url('watermark.jpeg');      
+      background-position: 0 0;
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0rem 2rem 3rem;
+      background: linear-gradient(160deg, rgba(255,255,255,0.97) 60%, rgba(4,166,214,0.12) 100%);
+    }
+
+    #hero img.logo {
+      width: min(400px, 90vw);
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 4px 14px rgba(4,166,214,0.3));
+    }
+
+    #hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    #hero h1 span { color: var(--blue); }
+
+    #hero .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(250,81,41,0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(250,81,41,0.4);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 5px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple));
+      border: none;
+    }
+
+    /* ── TABS ── */
+    .tabs-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #e5e7eb;
+      padding-bottom: 0;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+      border-radius: 6px 6px 0 0;
+      backdrop-filter: blur(4px);
+    }
+
+    .tab-btn:hover { color: var(--blue); }
+
+    .tab-btn.active {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+      background: rgba(4,166,214,0.06);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .tab-panel.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── TAB CONTENT STYLES ── */
+    .tab-panel h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+
+    .tab-panel h2 span { color: var(--blue); }
+
+    .tab-panel p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+
+    .tab-panel p + p { margin-top: 1rem; }
+
+    .content-box {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 2px 24px rgba(4,166,214,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .content-box p { max-width: none; }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-top: 5px solid var(--card-color, var(--blue));
+    }
+
+    .card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.95rem; color: var(--muted); max-width: none; }
+
+    /* ── MISSION / VISION ── */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) { .mv-grid { grid-template-columns: 1fr; } }
+
+    .mv-box {
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .mv-box.mission {
+      background: rgba(4,166,214,0.08);
+      border-left: 5px solid var(--blue);
+    }
+
+    .mv-box.vision {
+      background: rgba(125,191,16,0.08);
+      border-left: 5px solid var(--green);
+    }
+
+    .mv-box h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .mv-box p { font-size: 0.98rem; color: var(--muted); max-width: none; }
+
+    /* ── AKTIVITETER ── */
+    .activity-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .activity-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .activity-list li .act-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .activity-list li strong { display: block; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .activity-list li span { font-size: 0.95rem; color: var(--muted); }
+
+    /* ── KONTAKT ── */
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .kontakt-item {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+
+    .kontakt-item .icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .kontakt-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .kontakt-item a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .kontakt-item a:hover { text-decoration: underline; }
+    .kontakt-item p { font-size: 0.95rem; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.90);
+    }
+
+    footer strong { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section id="hero">
+    <img src="klub-unik-hands-logo.svg" alt="Klub Unik logo" class="logo" />
+    <h1>Velkommen til <span>Klub Unik</span></h1>
+    <p class="tagline">Et inkluderende fællesskab og en tryg øvebane for sårbare børn.</p>
+    <a href="https://www.facebook.com/groups/990644713110425" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Mød os på Facebook</a>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Tabs -->
+  <div class="tabs-wrapper">
+    <nav class="tab-nav" role="tablist" aria-label="Navigation">
+      <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-om"          id="btn-om">Om os</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-mv"          id="btn-mv">Mission &amp; vision</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-aktiviteter" id="btn-aktiviteter">Aktiviteter / Programmer</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-kontakt"     id="btn-kontakt">Kontakt</button>
+    </nav>
+
+    <!-- Om os -->
+    <div class="tab-panel active" id="tab-om" role="tabpanel" aria-labelledby="btn-om">
+      <div class="content-box">
+        <h2><span>Om</span> Klub Unik</h2>
+        <p>
+          Klub Unik er en frivillig, forældreinitieret organisation og et inkluderende fællesskab i dagtimerne
+          for børn og unge i mistrivsel. Klubben er startet af forældre til børn med skolevægring og ufrivilligt
+          skolefravær — med ønsket om at skabe et trygt sted, hvor børnene kan opleve fællesskab, relationer
+          og trivsel i eget tempo.
+        </p>
+        <p>
+          Vi hjælper børn og unge i skolealderen, som oplever skolevægring, ufrivilligt skolefravær eller
+          mangler sociale fællesskaber. Derudover støtter vi familierne omkring børnene gennem netværk og
+          erfaringsudveksling — fordi vi ved, at det kan føles meget ensomt at stå i den situation.
+        </p>
+        <p>
+          Som frivillig organisation skaber vi trygge rammer for sociale, kreative og relationelle aktiviteter.
+          Fokus er på trivsel frem for præstation, og alle aktiviteter tilpasses børnenes behov og overskud.
+        </p>
+        <p>
+          Ideen udspringer af <strong>Klub Fristedet</strong> i Aarhus, som vi jævnligt sparrer med.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card" style="--card-color: var(--orange)">
+          <div class="icon">🤝</div>
+          <h3>Forældre som drivkraft</h3>
+          <p>Vi forældre er drivkraften — alle bidrager til fællesskabet og hjælper hinanden.</p>
+        </div>
+        <div class="card" style="--card-color: var(--blue)">
+          <div class="icon">🛡️</div>
+          <h3>Tryg voksen med</h3>
+          <p>Alle børn deltager med en forælder eller anden omsorgsperson der kender barnet godt.</p>
+        </div>
+        <div class="card" style="--card-color: var(--green)">
+          <div class="icon">🌱</div>
+          <h3>Plads til alle</h3>
+          <p>Vi skaber rum for børn der har haft svært ved at være i almene fællesskaber.</p>
+        </div>
+        <div class="card" style="--card-color: var(--yellow)">
+          <div class="icon">⭐</div>
+          <h3>Et unikt fællesskab</h3>
+          <p>Lad os sammen skabe et unikt fællesskab — for og med vores børn.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission & vision -->
+    <div class="tab-panel" id="tab-mv" role="tabpanel" aria-labelledby="btn-mv">
+      <div class="content-box">
+        <h2><span>Mission</span> &amp; vision</h2>
+        <p>
+          Klub Unik er en frivillig organisation, der arbejder for at sikre, at ingen børn er overladt til isolation og ensomhed — hverken de børn, der kæmper med at passe ind, eller de familier, der bærer på tunge byrder alene.
+        </p>
+        <div class="mv-grid">
+          <div class="mv-box mission">
+            <h3>🎯 Mission</h3>
+            <p>
+              At skabe et trygt og inkluderende fællesskab for børn og unge i mistrivsel, hvor de kan opleve tilhørsforhold, relationer og positive fællesskaber uden krav og pres.
+            </p>
+          </div>
+          <div class="mv-box vision">
+            <h3>🌟 Vision</h3>
+            <p>
+              At ingen børn eller unge skal føle sig alene eller glemt, fordi de ikke passer ind i traditionelle fællesskaber som skole og fritidsliv.
+            </p>
+          </div>
+          <div class="mv-box work">
+            <h3>🤝 Vi arbejder for</h3>
+            <p>
+              Vi arbejder for at forebygge isolation og mistrivsel blandt børn og unge ved at skabe stabile fællesskaber, positive oplevelser og sociale relationer. Samtidig arbejder vi for at styrke familierne og skabe større forståelse for skolevægring og ufrivilligt skolefravær.
+            </p>
+          </div>
+          <div class="mv-box impact">
+            <h3>🌍 Vores indflydelse</h3>
+            <p>
+              Klub Unik giver børn og unge mulighed for igen at indgå i sociale relationer og opleve følelsen af at høre til. Vi oplever øget trivsel, større selvværd og mere mod hos børnene. Samtidig skaber klubben et vigtigt netværk for familier, som ofte føler sig alene i deres situation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aktiviteter / Programmer -->
+    <div class="tab-panel" id="tab-aktiviteter" role="tabpanel" aria-labelledby="btn-aktiviteter">
+      <div class="content-box">
+        <h2><span>Aktiviteter</span> &amp; programmer</h2>
+        <p>
+          I Klub Unik holder vi trygge klubdage i dagtimerne med fokus på fællesskab, trivsel og relationer.
+          Alt foregår i rolige rammer uden præstationskrav — aktiviteterne tilpasses børnenes behov og tempo,
+          og alle er velkomne, uanset hvor de er i deres trivsel.
+        </p>
+        <p>
+          Klubben henvender sig til børn og unge i skolealderen med skolevægring, ufrivilligt skolefravær
+          eller social isolation — samt deres familier.
+        </p>
+        <ul class="activity-list">
+          <li>
+            <span class="act-icon">🎨</span>
+            <div>
+              <strong>Kreative projekter</strong>
+              <span>Tegning, maleri, håndværk og andre kreative aktiviteter i rolige rammer med plads til fordybelse og fri udfoldelse.</span>
+            </div>
+          </li>
+          <li>
+            <span class="act-icon">🎲</span>
+            <div>
+              <strong>Brætspil og gaming</strong>
+              <span>Fælles spil — både analoge og digitale — skaber naturlige relationer og sjov samvær uden pres.</span>
+            </div>
+          </li>
+          <li>
+            <span class="act-icon">⚽</span>
+            <div>
+              <strong>Boldspil og bevægelse</strong>
+              <span>Enkle og trygge bevægelsesaktiviteter tilpasset børn, der måske har haft svært ved struktureret idræt.</span>
+            </div>
+          </li>
+          <li>
+            <span class="act-icon">🍕</span>
+            <div>
+              <strong>Fællesspisning</strong>
+              <span>At spise sammen er en vigtig social øvebane. Vi laver mad og spiser det i fællesskab.</span>
+            </div>
+          </li>
+          <li>
+            <span class="act-icon">🌿</span>
+            <div>
+              <strong>Udflugter og fælles oplevelser</strong>
+              <span>Ture ud af huset — til naturen, parker eller andre steder — giver nye oplevelser og styrker fællesskabet.</span>
+            </div>
+          </li>
+          <li>
+            <span class="act-icon">💬</span>
+            <div>
+              <strong>Netværk og støtte til forældre</strong>
+              <span>Mens børnene er aktive, har forældre mulighed for at mødes, dele erfaringer og støtte hinanden i hverdagen.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Kontakt -->
+    <div class="tab-panel" id="tab-kontakt" role="tabpanel" aria-labelledby="btn-kontakt">
+      <div class="content-box">
+        <h2><span>Kontakt</span> os</h2>
+        <p>
+          Har du spørgsmål til Klub Unik, eller ønsker du at vide mere om, hvordan du og dit barn kan blive en del af fællesskabet?</br>Vi hører gerne fra dig.
+        </p>
+        <div class="kontakt-grid">
+          <div class="kontakt-item">
+            <div class="icon">📘</div>
+            <h3>Facebook-gruppe</h3>
+            <p>Følg med og tag kontakt via vores Facebook-gruppe.</p>
+            <a href="https://www.facebook.com/groups/990644713110425" target="_blank" rel="noopener noreferrer">Besøg gruppen</a>
+          </div>
+          <div class="kontakt-item">
+            <div class="icon">📧</div>
+            <h3>E-mail</h3>
+            <p>Send os en besked, og vi vender tilbage hurtigst muligt.</p>
+            <a href="mailto:kontakt@klubunik.dk">kontakt@klubunik.dk</a>
+          </div>
+          <div class="kontakt-item">
+            <div class="icon">📍</div>            
+            <h3>Adresse</h3>
+            <p>Klub Unik</br>
+            Rossinisvej 15</br>
+            7400 Herning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Klub Unik</strong> &nbsp;·&nbsp; CVR: 46358635 &nbsp;·&nbsp; Adresse: Blåbjergvej 2, 7280 Sønder Felding &nbsp;·&nbsp; E-mail: <a href="mailto:kontakt@klub-unik.dk">kontakt@klub-unik.dk</a></p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels  = document.querySelectorAll('.tab-panel');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p  => p.classList.remove('active'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
